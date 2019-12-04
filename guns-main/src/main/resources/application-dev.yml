@@ -24,9 +24,9 @@
 #    username: root
 #    password: root
 #    filters: wall,mergeStat
-
 server:
-  port: 7717
+  port: 8080
+
 # Mysql数据库
 spring:
   datasource:
