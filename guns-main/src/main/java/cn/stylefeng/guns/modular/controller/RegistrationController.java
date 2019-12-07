@@ -1,8 +1,8 @@
 package cn.stylefeng.guns.modular.controller;
 
-import cn.stylefeng.guns.base.auth.annotion.Permission;
 import cn.stylefeng.guns.base.auth.context.LoginContextHolder;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.consts.ConstantsContext;
+import cn.stylefeng.guns.modular.service.IsAutoReviewService;
 import cn.stylefeng.guns.modular.service.MailService;
 import cn.stylefeng.guns.sys.core.constant.Const;
 import cn.stylefeng.guns.sys.core.constant.dictmap.UserDict;
@@ -28,6 +28,8 @@ public class RegistrationController extends BaseController {
     private UserService userService;
     @Autowired
     private MailService mailService;
+    @Autowired
+    private IsAutoReviewService autoReviewService;
 
     /**
      * 跳转到注册界面
@@ -49,6 +51,9 @@ public class RegistrationController extends BaseController {
     public ResponseData registeredUser(UserDto user){
         this.userService.addUser(user);
         this.mailService.sendMail(user.getEmail());
+        if(ConstantsContext.getRegisteredReviewOpen()){
+            autoReviewService.setUserRole(user.getAccount());
+        }
         return SUCCESS_TIP;
     }
 }

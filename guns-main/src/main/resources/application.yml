@@ -19,7 +19,7 @@ spring:
     atomikos:
       properties:
         max-actives: -1
-  mail:
+  mail: #邮箱服务器配置
     username: third_e@163.com
     password: 1997chenchang
     host: smtp.163.com

@@ -263,4 +263,16 @@ public class ConstantsContext {
         }
     }
 
+    /**
+     * 用户注册审核是否开关
+     */
+    public static Boolean getRegisteredReviewOpen() {
+        String gunsKaptchaOpen = (String) CONSTNTS_HOLDER.get("GUNS_REGISTEREdREVIEW_OPEN");
+        if (CommonStatus.ENABLE.getCode().equalsIgnoreCase(gunsKaptchaOpen)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

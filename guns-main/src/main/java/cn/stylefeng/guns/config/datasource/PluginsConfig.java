@@ -17,7 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan(basePackages = {
         "cn.stylefeng.guns.sys.modular.*.mapper",
         "cn.stylefeng.guns.modular.*.mapper",
-        "cn.stylefeng.guns.sms.modular.mapper"})
+        "cn.stylefeng.guns.sms.modular.mapper",
+        "cn.stylefeng.guns.modular.mapper"})
 @EnableTransactionManagement(proxyTargetClass = true)
 public class PluginsConfig {
 
