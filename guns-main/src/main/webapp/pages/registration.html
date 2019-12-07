@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>注册 - Guns</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="${ctxPath}/assets/common/libs/layui/css/layui.css?v=${constants.getReleaseVersion()}"/>
+    <link rel="stylesheet" href="${ctxPath}/assets/common/css/login.css?v=${constants.getReleaseVersion()}" media="all">
+    <style>
+        body {
+            background-image: url("${ctxPath}/assets/common/images/bg_login2.png");
+            background-position: center 110px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: #f0f2f5;
+        }
+
+        .login-header {
+            color: rgba(0, 0, 0, .85) !important;
+        }
+
+        .login-footer {
+            color: rgba(0, 0, 0, 0.7) !important;
+        }
+
+        .login-footer a {
+            color: rgba(0, 0, 0, 0.7) !important;
+        }
+
+        .login-footer a:hover {
+            color: rgba(0, 0, 0, 0.4) !important;
+        }
+    </style>
+    <script>
+        if (window != top)
+            top.location.replace(location.href);
+    </script>
+</head>
+
+<body>
+<div class="login-wrapper">
+
+    <div class="login-header">
+        <img src="${ctxPath}/assets/expand/images/logo.png"> ${constants.getSystemName()}
+    </div>
+
+    <div class=" login-body">
+        <div class="layui-card">
+            <!--<form class="layui-form" id="userForm" lay-filter="userForm">-->
+                <div class="layui-card-header">
+                    <i class="layui-icon layui-icon-engine"></i>&nbsp;&nbsp;用户注册
+                </div>
+                <form class="layui-card-body layui-form layui-form-pane" id="userForm" lay-filter="userForm">
+
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">账号<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input name="account" placeholder="请输入账号" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+
+                        <!--<label class="layui-form-label">账号</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input name="account" id="username"  lay-reqtext="用户名是必填项，岂能为空？" placeholder="请输入" type="text" lay-verify="required" autocomplete="off" class="layui-input">-->
+
+                            <!--&lt;!&ndash; <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input"> &ndash;&gt;-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input name="name" placeholder="请输入姓名" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+
+                        <!--<label class="layui-form-label">姓名</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input name="name" id="name"  lay-reqtext="姓名是必填项，岂能为空？" placeholder="请输入" type="text" lay-verify="required" autocomplete="off" class="layui-input">-->
+
+                            <!--&lt;!&ndash; <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input"> &ndash;&gt;-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">邮箱<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input name="email" placeholder="请输入邮箱" type="text" class="layui-input" lay-verify="required|email" autocomplete="off" required/>
+                        </div>
+
+                        <!--<label class="layui-form-label">邮箱</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="text" name="email" placeholder="请输入XXX.XX.com" lay-verify="required|email" autocomplete="off" class="layui-input">-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="layui-form-item">
+
+                        <label class="layui-form-label">密码<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input name="password" placeholder="请输入密码" type="password" class="layui-input" lay-verify="required|psw" autocomplete="new-password" required/>
+                        </div>
+
+                        <!--<label class="layui-form-label">密码</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--&lt;!&ndash; <input name="password" id="password" placeholder="密码" type="password" lay-verify="required|pass" autocomplete="off" class="layui-input"> &ndash;&gt;-->
+
+                            <!--<input type="password" name="password" lay-verify="required|pass" placeholder="请输入密码" autocomplete="off" class="layui-input">-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">重复密码<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input name="rePassword" placeholder="请输入重复密码" type="password" class="layui-input" autocomplete="new-password" lay-verify="required|repsw" required/>
+                        </div>
+
+                         <!--<label class="layui-form-label">确定密码</label>-->
+                         <!--<div class="layui-input-block">-->
+                             <!--<input name="password" id="password" placeholder="确定密码" type="password" lay-verify="required|pass" class="layui-input">-->
+                         <!--</div>-->
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">组织</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="dept" id="dept" placeholder="请输入组织"  lay-verify="" class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                        <a href="${ctxPath}/login" class="layui-link">已有帐号</a>
+                        <a href="javascript:;" class="layui-link pull-right">忘记密码？</a>
+                    </div>
+                    <div class="layui-form-item">
+                        <button class="layui-btn layui-btn-fluid" lay-filter="btnSubmit" lay-submit >注 册</button>
+                        <!--<input type="submit" class="layui-btn layui-btn-fluid" lay-filter="btnSubmit" lay-submit value="注册" />-->
+                    </div>
+
+                </form>
+            <!--</form>-->
+        </div>
+    </div>
+
+    <div class="login-footer">
+        <p>© 2019 <a href="https://www.stylefeng.cn" target="_blank">stylefeng版权所有</a></p>
+    </div>
+</div>
+
+@/* 加入contextPath属性和session超时的配置 */
+<script type="text/javascript">
+    var Feng = {
+        ctxPath: "${ctxPath}",
+        version: '${constants.getReleaseVersion()}'
+    };
+</script>
+<script type="text/javascript" src="${ctxPath}/assets/common/libs/layui/layui.js?v=${constants.getReleaseVersion()}"></script>
+<script type="text/javascript" src="${ctxPath}/assets/common/js/common.js?v=${constants.getReleaseVersion()}"></script>
+
+<script>
+    layui.use(['layer','layer', 'form','admin' , 'ax', 'index' ], function () {
+        var $ = layui.jquery;
+        var $ax = layui.ax;
+        var layer = layui.layer;
+        var form = layui.form;
+        var admin = layui.admin;
+        // var layedit = layui.layedit;
+        var index = layui.index;
+
+        // // 图形验证码
+        // $('.login-captcha').click(function () {
+        //     this.src = this.src + '?t=' + (new Date).getTime();
+        // });
+
+        // var errorMsg = "${tips!}";
+        // if (errorMsg) {
+        //     layer.msg(errorMsg, {icon: 5, anim: 6});
+        // }
+
+        // @if(constants.getTenantOpen()){
+        //     //初始化租户列表
+        //     var ajax = new $ax(Feng.ctxPath + "/tenantInfo/listTenants", function (data) {
+        //         for (var i = 0; i < data.data.length; i++) {
+        //             var name = data.data[i].name;
+        //             var code = data.data[i].code;
+        //             $("#tenantCode").append('<option value="' + code + '">' + name + '</option>');
+        //         }
+        //         form.render();
+        //     }, function (data) {
+        //     });
+        //     ajax.start();
+        // @}
+
+        // //登录操作
+        // $('#submit').click(function () {
+        //     layer.msg("点击的注册按钮");
+        //     var ajax = new $ax(Feng.ctxPath + "/login", function (data) {
+        //         Feng.success("登录成功!");
+        //         index.clearTabCache();
+        //         window.location.href = Feng.ctxPath + "/";
+        //     }, function (data) {
+        //         layer.msg("登录失败！" + data.responseJSON.message, {icon: 5, anim: 6});
+        //     });
+        //     ajax.set("username", $("#username").val());
+        //     ajax.set("password", $("#password").val());
+        //     @if(constants.getTenantOpen()){
+        //         ajax.set("tenantCode", $("#tenantCode").val());
+        //     @}
+        //     @if(constants.getKaptchaOpen()){
+        //         ajax.set("kaptcha", $("#kaptcha").val());
+        //     @}
+        //     ajax.start();
+        // });
+
+        // 添加表单验证方法
+        form.verify({
+            psw: [/^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'],
+
+            repsw: function (value) {
+                var pastest = Feng.ctxPath+"AA";
+                if (value !== $('#userForm input[name=password]').val()) {
+                    return value+"0000"+pastest;
+                }
+            }
+        });
+        // $('#submit').click(function (data) {
+        form.on('submit(btnSubmit)', function (data) {
+            var ajax = new $ax(Feng.ctxPath + "/registration_add", function (data) {
+                // Feng.success("注册成功！");
+                alert("注册成功！");
+                index.clearTabCache();
+                // //传给上个页面，刷新table用
+                // admin.putTempData('formOk', true);
+                //
+                // //关掉对话框
+                // admin.closeThisDialog();
+                window.location.href = Feng.ctxPath + "/login";
+
+            }, function (data) {
+                Feng.error("添加失败！" + data.responseJSON.message);
+            });
+            ajax.set(data.field);
+            ajax.start();
+
+            //添加 return false 可成功跳转页面
+            return false;
+        });
+
+
+        // //自定义验证规则
+        // form.verify({
+        //     title: function(value){
+        //         if(value.length < 5){
+        //             return '标题至少得5个字符啊';
+        //         }
+        //     }
+        //     ,pass: [
+        //         /^[\S]{6,12}$/
+        //         ,'密码必须6到12位，且不能出现空格'
+        //     ]
+        // });
+    });
+</script>
+
+
+</body>
+</html>

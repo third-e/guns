@@ -49,6 +49,8 @@ public interface Const {
             "/assets/**",
             "/gunsApi/**",
             "/login",
+            "/registration",
+            "/registration_add",
             "/global/sessionError",
             "/kaptcha",
             "/error",

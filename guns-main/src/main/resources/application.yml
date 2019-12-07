@@ -19,6 +19,12 @@ spring:
     atomikos:
       properties:
         max-actives: -1
+  mail:
+    username: third_e@163.com
+    password: 1997chenchang
+    host: smtp.163.com
+
+
 
 mybatis-plus:
   typeAliasesPackage: cn.stylefeng.guns.modular.system.model

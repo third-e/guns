@@ -53,6 +53,7 @@
                 <version>1.2.6</version>
             </dependency>
 
+
             <!--数据库驱动,可根据自己需要自行删减-->
             <dependency>
                 <groupId>mysql</groupId>
@@ -136,6 +137,17 @@
                 <version>${swagger.version}</version>
             </dependency>
 
+            <!--&lt;!&ndash;配置邮箱管理&ndash;&gt;-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>2.2.1.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>

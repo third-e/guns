@@ -2,9 +2,12 @@ package cn.stylefeng.guns.base;
 
 import cn.stylefeng.guns.GunsApplication;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -29,12 +32,13 @@ public class BaseJunit {
 
     protected MockMvc mockMvc;
 
-    @Before
-    public void setupMockMvc() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-    }
 
-    @Before
-    public void initDatabase() {
-    }
+//    @Before
+//    public void setupMockMvc() {
+//        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+//    }
+//
+//    @Before
+//    public void initDatabase() {
+//    }
 }

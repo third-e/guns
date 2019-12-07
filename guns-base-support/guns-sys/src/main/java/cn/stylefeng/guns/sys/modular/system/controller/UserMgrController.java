@@ -334,7 +334,7 @@ public class UserMgrController extends BaseController {
         if (userId.equals(Const.ADMIN_ID)) {
             throw new ServiceException(BizExceptionEnum.CANT_CHANGE_ADMIN);
         }
-        this.userService.assertAuth(userId);
+        this.userService.assertAuth(userId); //判断当前用户是否有权限修改用户
         this.userService.setRoles(userId, roleIds);
         return SUCCESS_TIP;
     }

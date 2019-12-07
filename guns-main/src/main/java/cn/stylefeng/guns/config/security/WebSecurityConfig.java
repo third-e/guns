@@ -76,6 +76,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.antMatchers("/ssoLogin").permitAll()
                 //.antMatchers("/sysTokenLogin").permitAll()
 
+                //注册接口开放
+                .antMatchers("/registration").permitAll()
+
+                //注册接口开放
+                .antMatchers("/registration_add").permitAll()
+
                 // 登录接口放开过滤
                 .antMatchers("/login").permitAll()
 
