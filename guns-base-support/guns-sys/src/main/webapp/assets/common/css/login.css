@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: #f0f2f5;
+
 }
 
 .login-wrapper, body, html {
@@ -13,17 +14,18 @@ body {
 }
 
 .login-wrapper {
-    overflow: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    display:flex;
+    /*overflow: auto;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
 }
 
-.login-body {
-    padding: 10px 10px 40px 10px;
-}
+/*.login-body {*/
+    /*padding: 10px 10px 40px 10px;*/
+/*}*/
 
 .login-body > .layui-card {
     max-width: 360px;
