@@ -2,6 +2,7 @@ package cn.stylefeng.guns.modular.controller;
 
 import cn.stylefeng.guns.base.auth.context.LoginContextHolder;
 import cn.stylefeng.guns.base.consts.ConstantsContext;
+import cn.stylefeng.guns.modular.model.MailboxDto;
 import cn.stylefeng.guns.modular.service.IsAutoReviewService;
 import cn.stylefeng.guns.modular.service.MailService;
 import cn.stylefeng.guns.sys.core.constant.Const;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * 注册页面控制
  */
+
 @Controller
 public class RegistrationController extends BaseController {
 
@@ -46,14 +48,20 @@ public class RegistrationController extends BaseController {
     /**
      * 点击注册执行动作
      */
+
     @RequestMapping(value = "/registration_add",method = RequestMethod.POST)
     @ResponseBody
-    public ResponseData registeredUser(UserDto user){
+    public ResponseData registeredUser(UserDto user, MailboxDto mailboxDto){
         this.userService.addUser(user);
-        this.mailService.sendMail(user.getEmail());
+        mailboxDto.setMailTitle("账号注册审核通知！");
         if(ConstantsContext.getRegisteredReviewOpen()){
             autoReviewService.setUserRole(user.getAccount());
+            mailboxDto.setContent("您好，"+mailboxDto.getName()+"先生/女士，您申请的账号审核通过，现可以登录了！");
+        }else {
+            mailboxDto.setContent("您好，"+mailboxDto.getName()+"先生/女士，您申请的账号正在审核中，请您耐心等待！");
         }
+
+        this.mailService.sendMail(mailboxDto);
         return SUCCESS_TIP;
     }
 }
